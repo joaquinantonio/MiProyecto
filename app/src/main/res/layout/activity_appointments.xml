@@ -30,15 +30,15 @@
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/orange_A200"
+            android:background="@color/orange_A700"
             app:tabIndicatorColor="@color/white"
-            app:tabSelectedTextColor="@color/white"
+            app:tabSelectedTextColor="@color/orange_A700"
             app:tabTextColor="@color/white" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager"
+        android:id="@+id/viewPager2"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
