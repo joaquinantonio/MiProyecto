@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "214866108741",
+    "firebase_url": "https://mi-proyecto-8c7aa-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "mi-proyecto-8c7aa",
+    "storage_bucket": "mi-proyecto-8c7aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214866108741:android:bf05e91cecf3dba6205e2c",
+        "android_client_info": {
+          "package_name": "com.ja.miproyecto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "214866108741-pp6h88r0s3qsl070rl314q21s4f6r3op.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ja.miproyecto",
+            "certificate_hash": "5d84431581d0b4ec5a67ca8fd76f81a1edfce6b6"
+          }
+        },
+        {
+          "client_id": "214866108741-v8edhr0cv6b11onnmnh1i3fo9mnc9cov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMO_kOd4XnUNEl9DwXBY9Nh2NMVonxI5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "214866108741-v8edhr0cv6b11onnmnh1i3fo9mnc9cov.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

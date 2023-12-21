@@ -1,0 +1,88 @@
+package com.ja.miproyecto;
+
+import android.content.Context;
+import android.content.Intent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
+
+public class DoctorUserAdapter extends RecyclerView.Adapter<DoctorUserAdapter.ViewHolder> {
+    private Context mContext;
+    private List<PatientDetails> mUsers;
+    private boolean isChat;
+    private List<String> status;
+
+
+    public DoctorUserAdapter(Context mContext, List<PatientDetails> mUsers, List<String> status, boolean isChat) {
+        this.mUsers = mUsers;
+        this.mContext = mContext;
+        this.status = status;
+        this.isChat = isChat;
+    }
+
+    @NonNull
+    @Override
+    public DoctorUserAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.user_item, parent, false);
+        ViewHolder viewHolder = new ViewHolder(view);
+        return viewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull DoctorUserAdapter.ViewHolder holder, int position) {
+        PatientDetails detail = mUsers.get(position);
+        String info = detail.getName() + " ("+detail.getPhone()+")";
+        holder.username.setText(info);
+        holder.profile_image.setImageResource(R.drawable.patient_dp);
+        if(isChat && status.size()!=0){
+            String status_val = status.get(position);
+            if(status_val.equals("online")){
+                holder.img_on.setVisibility(View.VISIBLE);
+                holder.img_off.setVisibility(View.GONE);
+            }
+            else{
+                holder.img_on.setVisibility(View.GONE);
+                holder.img_off.setVisibility(View.VISIBLE);
+            }
+        }
+        else{
+            holder.img_on.setVisibility(View.GONE);
+            holder.img_off.setVisibility(View.GONE);
+        }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, DoctorMessageActivity.class);
+                intent.putExtra("phone", detail.getPhone());
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return mUsers.size();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
+        public TextView username;
+        public ImageView profile_image;
+        private ImageView img_on;
+        private ImageView img_off;
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            username = itemView.findViewById(R.id.userName);
+            profile_image = itemView.findViewById(R.id.profileImage);
+            img_on = itemView.findViewById(R.id.img_on);
+            img_off = itemView.findViewById(R.id.img_off);
+        }
+    }
+}

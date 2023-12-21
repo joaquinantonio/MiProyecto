@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Proyecto</string>
+
+    <string-array name="Gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string name="nav_drawer_open">Open Navigation Drawer</string>
+    <string name="nav_drawer_close">Close Navigation Drawer</string>
+    <string name="ghlink">https://github.com/joaquinantonio</string>
+    <string name="prevrep">Previous Reports</string>
+    <string name="relevant">Relevant Points From History</string>
+
+    <string-array name="Speciality">
+        <item>Infectious Disease</item>
+        <item>Skin Specialist</item>
+        <item>General Medicine</item>
+        <item>Endocrinology &amp; Diabetes</item>
+        <item>Palliative Care</item>
+        <item>Orthopaedic</item>
+        <item>Immunology</item>
+        <item>Rheumatology</item>
+        <item>Neurology</item>
+        <item>Ophthalmology</item>
+        <item>Cardiologist</item>
+        <item>Cancer Care / Oncology</item>
+        <item>Gastroenterology, Hepatology &amp; Endoscopy</item>
+        <item>ENT</item>
+    </string-array>
+
+
+</resources>

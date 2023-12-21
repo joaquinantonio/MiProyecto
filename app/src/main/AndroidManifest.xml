@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
+
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.sensor.stepcounter"
+        android:required="true"/>
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TeleClinic"
+        android:enableOnBackInvokedCallback="true">
+        <activity android:name=".PatientSidePrescriptionRecycler"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".PatientPrescription"
+            android:screenOrientation="portrait" />
+        <activity android:name=".PatientAppointmentClass"
+            android:screenOrientation="portrait" />
+        <activity android:name=".PatientAppointments"
+            android:screenOrientation="portrait" />
+        <activity android:name=".AdminAddDoctor"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Contact"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AdminActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ViewAllSpeciality"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AvailableDoctors"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PatientDisplayDoctor"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ForgotPassword"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Doctors"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Patient"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".verifyOtp"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PatientLogin"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".DoctorsLogin"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AskRole"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".DoctorsUpdateProfile"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".DoctorsViewProfile"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".DoctorChooseSlots"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PatientBookingAppointments"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PrescriptionActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".DoctorsSidePatientDetails"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PatientMessageActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".DoctorChatDisplay"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".DoctorMessageActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PatientChatDisplay"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AdminAvailableAppointments"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AdminDoctorDetails"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Appointments"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Feedback"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".DoctorsShowPreviousPrescription"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".DoctorPreviousPrescriptions"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".DoctorsShowFeedback"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AdminPayments"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AdminChatDisplay"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AdminMessageActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PatientPaymentAppointment"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PatientSessionManagement" />
+        <activity android:name=".AdminFeedBack"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AdminShowFeedBack"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

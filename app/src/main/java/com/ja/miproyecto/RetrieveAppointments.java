@@ -1,0 +1,38 @@
+package com.ja.miproyecto;
+
+public class RetrieveAppointments {
+    private String phone,date,slot;
+
+    public RetrieveAppointments(String phone, String date, String slot) {
+        this.phone = phone;
+        this.date = date;
+        this.slot = slot;
+    }
+
+    public RetrieveAppointments() {
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getSlot() {
+        return slot;
+    }
+
+    public void setSlot(String slot) {
+        this.slot = slot;
+    }
+}
