@@ -27,7 +27,6 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class AdminPaymentsPrevious extends Fragment {
-
     private RecyclerView recyclerView;
     private FirebaseUser user;
     private DatabaseReference reference;
@@ -53,7 +52,6 @@ public class AdminPaymentsPrevious extends Fragment {
         super.onAttach(context);
         mcontext = context;
     }
-
 
     @Nullable
     @Override
@@ -102,7 +100,7 @@ public class AdminPaymentsPrevious extends Fragment {
                     recyclerView.setAdapter(adapter);
                 } else {
                     if (mcontext != null) {
-                        Toast.makeText(getActivity(), "There are no Completed Payments!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "There are no Completed Payments", Toast.LENGTH_SHORT).show();
                     }
                 }
             }

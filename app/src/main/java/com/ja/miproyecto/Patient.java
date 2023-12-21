@@ -29,7 +29,7 @@ public class Patient extends AppCompatActivity implements NavigationView.OnNavig
     private long backPressedTime;
     private DrawerLayout drawerLayout1;
     String phoneNumber = "999";
-    String website = "https://github.com/joaquinantonio";
+    String website = "https://github.com/joaquinantonio/MiProyecto";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +82,7 @@ public class Patient extends AppCompatActivity implements NavigationView.OnNavig
             startActivity(intent);
         });
 
-        Integer [] sliderDataArrayList={R.drawable.image1,R.drawable.image3,R.drawable.image1};
+        Integer [] sliderDataArrayList={R.drawable.image2,R.drawable.image1,R.drawable.image3};
 
         ArrayList<SliderData> slider_data = new ArrayList<>();
 

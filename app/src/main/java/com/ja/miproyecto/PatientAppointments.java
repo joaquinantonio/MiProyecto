@@ -19,13 +19,12 @@ public class PatientAppointments extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_appointments);
+        setContentView(R.layout.activity_patient_appointment);
 
         tabLayout=findViewById(R.id.tabLayout);
         viewPager=findViewById(R.id.viewPager);
 
         getTabs();
-
 
     }
 

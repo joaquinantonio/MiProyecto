@@ -36,7 +36,7 @@ public class CurrentFragment extends Fragment {
     private ArrayList<AppointmentNotif> current_appt;
     private String email;
     private Date d1, d2;
-    private Appointment_Show_Adapter adapter;
+    private AppointmentShowAdapter adapter;
     private EditText search;
 
     public CurrentFragment(){
@@ -123,12 +123,12 @@ public class CurrentFragment extends Fragment {
                         }
 
                     }
-                    adapter = new Appointment_Show_Adapter(current_appt);
+                    adapter = new AppointmentShowAdapter(current_appt);
                     recyclerView.setAdapter(adapter);
 
                 }
                 else{
-                    Toast.makeText(getActivity(), "There are no Current Appointments!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "There are no Current Appointments", Toast.LENGTH_SHORT).show();
                 }
             }
 

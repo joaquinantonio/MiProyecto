@@ -36,7 +36,7 @@ public class AdminPreviousFragment extends Fragment {
     private FirebaseUser user;
     private ArrayList<AppointmentNotif> previous_appt;
     private Date d1, d2;
-    private Appointment_Show_Adapter adapter;
+    private AppointmentShowAdapter adapter;
 
     public AdminPreviousFragment(){
 
@@ -125,12 +125,12 @@ public class AdminPreviousFragment extends Fragment {
 
                     }
 
-                    adapter = new Appointment_Show_Adapter(previous_appt);
+                    adapter = new AppointmentShowAdapter(previous_appt);
                     recyclerView.setAdapter(adapter);
 
                 }
                 else{
-                    Toast.makeText(getActivity(), "There are no previous Appointments", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "There are no Previous Appointments", Toast.LENGTH_SHORT).show();
                 }
             }
 

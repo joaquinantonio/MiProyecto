@@ -137,7 +137,7 @@ public class PatientCurrentAppointments extends Fragment {
                             }
                         }
                         if(current_appt.size() == 0){
-                            Toast.makeText(getActivity(), "There are no Upcoming Appointments!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "There are no Upcoming Appointments", Toast.LENGTH_SHORT).show();
                         }
 
                         adapter = new PatientAppointmentAdapter(current_appt);

@@ -246,7 +246,7 @@ public class AdminPaymentsCurrent extends Fragment {
                     itemTouchHelper.attachToRecyclerView(recyclerView);
                 } else {
                     if (mcontext != null) {
-                        Toast.makeText(mcontext, "There are no Payments!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mcontext, "There are no Payments", Toast.LENGTH_SHORT).show();
                     }
                 }
             }

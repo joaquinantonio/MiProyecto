@@ -4,9 +4,6 @@ public class DoctorImages {
     private String name;
     private String url;
 
-    public DoctorImages() {
-    }
-
     public DoctorImages(String name, String url) {
         this.name = name;
         this.url = url;

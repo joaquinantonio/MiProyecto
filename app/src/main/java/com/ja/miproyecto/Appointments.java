@@ -9,7 +9,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 public class Appointments extends AppCompatActivity {
 
     private TabLayout tabLayout;
-    private ViewPager2 viewPager;  // Use ViewPager2 instead of ViewPager
+    private ViewPager2 viewPager2;  // Use ViewPager2 instead of ViewPager
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +17,7 @@ public class Appointments extends AppCompatActivity {
         setContentView(R.layout.activity_appointments);
 
         tabLayout=findViewById(R.id.tabLayout);
-        viewPager=findViewById(R.id.viewPager);
+        viewPager2=findViewById(R.id.viewPager2);
 
         getTabs();
     }
@@ -33,10 +33,10 @@ public class Appointments extends AppCompatActivity {
         fragmentPagerAdapter.addFragment(PreviousFragment.getInstance(),"Previous");
         fragmentPagerAdapter.addFragment(CurrentFragment.getInstance(),"Current");
 
-        viewPager.setAdapter(fragmentPagerAdapter);
+        viewPager2.setAdapter(fragmentPagerAdapter);
 
-        // Use TabLayoutMediator for setting up tabs with ViewPager2
-        new TabLayoutMediator(tabLayout, viewPager,
+        // Use TabLayoutMediator for setting up tabs with viewPager22
+        new TabLayoutMediator(tabLayout, viewPager2,
                 (tab, position) -> tab.setText(fragmentPagerAdapter.getPageTitle(position))
         ).attach();
     }

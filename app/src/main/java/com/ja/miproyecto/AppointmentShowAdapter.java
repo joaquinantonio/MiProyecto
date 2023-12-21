@@ -11,11 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class Appointment_Show_Adapter extends RecyclerView.Adapter<Appointment_Show_Adapter.ViewHolder> {
+public class AppointmentShowAdapter extends RecyclerView.Adapter<AppointmentShowAdapter.ViewHolder> {
 
     private ArrayList<AppointmentNotif> appointments;
 
-    public Appointment_Show_Adapter(ArrayList<AppointmentNotif> appointments){
+    public AppointmentShowAdapter(ArrayList<AppointmentNotif> appointments){
         this.appointments = appointments;
     }
 

@@ -51,7 +51,7 @@ public class AskRole extends AppCompatActivity {
         });
     }
 
-    private void checkPatientSession() {
+    void checkPatientSession() {
         PatientSessionManagement session_management = new PatientSessionManagement(AskRole.this);
         String isUserLoggedin =session_management.getSession();
         if(!isUserLoggedin.equals("-1")){
@@ -63,7 +63,7 @@ public class AskRole extends AppCompatActivity {
         }
     }
 
-    private void checkDoctorSession() {
+    void checkDoctorSession() {
 
         DoctorsSessionManagement doctors_session_mangement = new DoctorsSessionManagement(AskRole.this);
         String isDoctorLoggedin[] =doctors_session_mangement.getDoctorSession();
@@ -75,7 +75,7 @@ public class AskRole extends AppCompatActivity {
         }
     }
 
-    private void moveToDoctorActivity() {
+    void moveToDoctorActivity() {
         DoctorsSessionManagement doctors_session_mangement = new DoctorsSessionManagement(AskRole.this);
         String type[] = doctors_session_mangement.getDoctorSession();
 
@@ -91,12 +91,9 @@ public class AskRole extends AppCompatActivity {
         }
     }
 
-    private void moveToPatientActivity() {
+    void moveToPatientActivity() {
         Intent intent = new Intent(AskRole.this, Patient.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
-
-
-
 }

@@ -148,7 +148,7 @@ public class PatientPreviousAppointments extends Fragment {
                             }
                         }
                         if(previous_appt.size() == 0){
-                            Toast.makeText(getActivity(), "There are no previous Appointments", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "There are no Previous Appointments", Toast.LENGTH_SHORT).show();
                         }
 
                         adapter = new PatientAppointmentAdapter(previous_appt);
