@@ -130,7 +130,7 @@ public class PatientDisplayDoctor extends AppCompatActivity {
                     }
                     doctor_slots.setText(time);
                 } else {
-                    doctor_slots.setText("Doctor is not available today!");
+                    doctor_slots.setText("Doctor is not available today.");
                 }
             }
 
@@ -145,7 +145,7 @@ public class PatientDisplayDoctor extends AppCompatActivity {
             public void onClick(View v) {
 //                Intent intent = new Intent(PatientDisplayDoctor.this, Calender.class);
                 Intent intent = new Intent(PatientDisplayDoctor.this, PatientBookingAppointments.class);
-                intent.putExtra("Email ID", email);
+                intent.putExtra("Email", email);
                 startActivity(intent);
             }
         });

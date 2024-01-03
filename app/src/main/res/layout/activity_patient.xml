@@ -212,7 +212,7 @@
                     android:layout_marginTop="32dp"
                     android:layout_marginBottom="32dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/our_doctors"
+                    android:src="@mipmap/our_doctors"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintHorizontal_bias="0.615"
                     app:layout_constraintLeft_toLeftOf="parent"

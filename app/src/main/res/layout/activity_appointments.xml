@@ -31,9 +31,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/orange_A700"
-            app:tabIndicatorColor="@color/white"
-            app:tabSelectedTextColor="@color/orange_A700"
-            app:tabTextColor="@color/white" />
+            app:tabIndicatorColor="@color/orange_A700"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextColor="@color/orange_A200" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

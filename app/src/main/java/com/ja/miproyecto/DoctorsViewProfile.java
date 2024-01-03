@@ -41,8 +41,8 @@ public class DoctorsViewProfile extends AppCompatActivity {
         //sign = (ImageView) findViewById(R.id.signImage);
         circle_image = findViewById(R.id.profileImage);
 
-        DoctorsSessionManagement doctors_session_mangement = new DoctorsSessionManagement(this);
-        String email_id = doctors_session_mangement.getDoctorSession()[0].replace(".", ",");
+        DoctorsSessionManagement doctors_session_management = new DoctorsSessionManagement(this);
+        String email_id = doctors_session_management.getDoctorSession()[0].replace(".", ",");
 
         progressBar.setVisibility(View.VISIBLE);
         DatabaseReference reference_doctor = FirebaseDatabase.getInstance("https://mi-proyecto-8c7aa-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Doctors_Data");

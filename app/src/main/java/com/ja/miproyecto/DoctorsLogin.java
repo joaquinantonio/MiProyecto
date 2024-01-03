@@ -112,23 +112,22 @@ public class DoctorsLogin extends AppCompatActivity implements View.OnClickListe
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 if (dataSnapshot.exists()) {
                                     String usertype = dataSnapshot.child("user_type").getValue(String.class);
-                                    if (usertype.equals("doctor")) {
-
-                                        DoctorEmail doctor_email_id = new DoctorEmail(emailMain, "doctor");
-                                        DoctorsSessionManagement doctors_session_management = new DoctorsSessionManagement(DoctorsLogin.this);
-                                        doctors_session_management.saveDoctorSession(doctor_email_id);
-                                        startActivity(new Intent(DoctorsLogin.this, Doctors.class));
-                                        progressBar.setVisibility(View.INVISIBLE);
-                                    } else {
-                                        DoctorEmail doctor_email_id = new DoctorEmail(emailMain, "Admin");
-                                        DoctorsSessionManagement doctors_session_management = new DoctorsSessionManagement(DoctorsLogin.this);
+                                    DoctorEmail doctor_email_id;
+                                    DoctorsSessionManagement doctors_session_management = new DoctorsSessionManagement(DoctorsLogin.this);
+                                    // Check if usertype is not null before invoking equals method
+                                    if (usertype != null && usertype.equals("Admin")) {
+                                        doctor_email_id = new DoctorEmail(emailMain, "Admin");
                                         doctors_session_management.saveDoctorSession(doctor_email_id);
                                         startActivity(new Intent(DoctorsLogin.this, AdminActivity.class));
-                                        progressBar.setVisibility(View.INVISIBLE);
+                                    } else {
+                                        doctor_email_id = new DoctorEmail(emailMain, "doctor");
+                                        doctors_session_management.saveDoctorSession(doctor_email_id);
+                                        startActivity(new Intent(DoctorsLogin.this, Doctors.class));
                                     }
+                                    progressBar.setVisibility(View.INVISIBLE);
                                 }
-//
                             }
+
 
                             @Override
                             public void onCancelled(DatabaseError databaseError) {

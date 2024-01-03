@@ -45,7 +45,7 @@ public class CurrentFragment extends Fragment {
 
     public static CurrentFragment getInstance()
     {
-        CurrentFragment currentFragment=new CurrentFragment();
+        CurrentFragment currentFragment = new CurrentFragment();
         return currentFragment;
     }
 
@@ -84,8 +84,8 @@ public class CurrentFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         current_appt = new ArrayList<>();
         reference = FirebaseDatabase.getInstance("https://mi-proyecto-8c7aa-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Doctors_Appointments");
-        DoctorsSessionManagement doctors_session_mangement = new DoctorsSessionManagement(getActivity());
-        email = doctors_session_mangement.getDoctorSession()[0].replace(".",",");
+        DoctorsSessionManagement doctors_session_management = new DoctorsSessionManagement(getActivity());
+        email = doctors_session_management.getDoctorSession()[0].replace(".",",");
 
         String[] monthName = {"Jan", "Feb",
                 "Mar", "Apr", "May", "Jun", "Jul",

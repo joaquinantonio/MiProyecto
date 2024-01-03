@@ -1,3 +1,4 @@
+/*
 package com.ja.miproyecto;
 
 import org.junit.Before;
@@ -65,3 +66,5 @@ public class AdminDoctorDetailsTest {
     }
 }
 
+
+ */

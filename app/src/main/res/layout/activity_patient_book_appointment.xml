@@ -124,7 +124,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginBottom="32dp"
             android:background="@drawable/custom_button"
-            android:text="Pay Consultation Fees"
+            android:text="Book Appointment"
             android:textColor="@color/white"
             app:backgroundTint="@null"
             app:layout_constraintBottom_toBottomOf="parent"

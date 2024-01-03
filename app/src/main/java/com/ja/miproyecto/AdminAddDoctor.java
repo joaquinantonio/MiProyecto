@@ -10,10 +10,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,7 +27,7 @@ public class AdminAddDoctor extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor_add_admin);
+        setContentView(R.layout.activity_add_doctor);
 
         progressBar=(ProgressBar) findViewById(R.id.progressbar_doc_add);
         mAuth = FirebaseAuth.getInstance();
@@ -40,13 +38,9 @@ public class AdminAddDoctor extends AppCompatActivity {
         editTextEmail = (EditText) findViewById(R.id.email);
         editTextPassword = (EditText) findViewById(R.id.password);
 
-        registerUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
-                registerUser();
-
-            }
+        registerUser.setOnClickListener(v -> {
+            progressBar.setVisibility(View.VISIBLE);
+            registerUser();
         });
     }
 
@@ -70,7 +64,7 @@ public class AdminAddDoctor extends AppCompatActivity {
         }
 
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            editTextEmail.setError("Please provide Valid Email");
+            editTextEmail.setError("Please provide valid email");
             progressBar.setVisibility(View.INVISIBLE);
             editTextEmail.requestFocus();
             return;
@@ -92,31 +86,28 @@ public class AdminAddDoctor extends AppCompatActivity {
 
 
         Task<AuthResult> authResultTask = mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()) {
-                            Users user = new Users(fullName,email, "offline", "doctor");
-                            String encodedemail = EncodeString(email);
-                            FirebaseDatabase.getInstance("https://mi-proyecto-8c7aa-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
-                                    .child(encodedemail)
-                                    .setValue(user).addOnCompleteListener(task1 -> {
-                                        if(task1.isSuccessful()) {
-                                            progressBar.setVisibility(View.INVISIBLE);
-                                            Toast.makeText(AdminAddDoctor.this,"Doctor has been registered successfully ",Toast.LENGTH_LONG).show();
-                                            mAuth.signOut();
-                                            startActivity(new Intent(AdminAddDoctor.this,DoctorsLogin.class));
-                                        }
-                                        else {
-                                            progressBar.setVisibility(View.INVISIBLE);
-                                            Toast.makeText(AdminAddDoctor.this,"Failed to register. Doctor already exists ",Toast.LENGTH_LONG).show();
-                                        }
-                                    });
-                        }
-                        else {
-                            progressBar.setVisibility(View.INVISIBLE);
-                            Toast.makeText(AdminAddDoctor.this,"Failed to register. Doctor already exists ", Toast.LENGTH_LONG).show();
-                        }
+                .addOnCompleteListener(task -> {
+                    if(task.isSuccessful()) {
+                        Users user = new Users(fullName,email, "offline", "doctor");
+                        String encodedemail = EncodeString(email);
+                        FirebaseDatabase.getInstance("https://mi-proyecto-8c7aa-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
+                                .child(encodedemail)
+                                .setValue(user).addOnCompleteListener(task1 -> {
+                                    if(task1.isSuccessful()) {
+                                        progressBar.setVisibility(View.INVISIBLE);
+                                        Toast.makeText(AdminAddDoctor.this,"Doctor has been registered successfully ",Toast.LENGTH_LONG).show();
+                                        mAuth.signOut();
+                                        startActivity(new Intent(AdminAddDoctor.this,AdminActivity.class));
+                                    }
+                                    else {
+                                        progressBar.setVisibility(View.INVISIBLE);
+                                        Toast.makeText(AdminAddDoctor.this,"Failed to register. Doctor already exists ",Toast.LENGTH_LONG).show();
+                                    }
+                                });
+                    }
+                    else {
+                        progressBar.setVisibility(View.INVISIBLE);
+                        Toast.makeText(AdminAddDoctor.this,"Failed to register. Doctor already exists ", Toast.LENGTH_LONG).show();
                     }
                 });
     }

@@ -62,8 +62,8 @@ public class DoctorChooseSlots extends AppCompatActivity {
 //        email = user.getEmail();
 //        email = email.replace(".",",");
 
-        DoctorsSessionManagement doctors_session_mangement = new DoctorsSessionManagement(this);
-        email = doctors_session_mangement.getDoctorSession()[0].replace(".", ",");
+        DoctorsSessionManagement doctors_session_management = new DoctorsSessionManagement(this);
+        email = doctors_session_management.getDoctorSession()[0].replace(".", ",");
         Toast.makeText(DoctorChooseSlots.this, "Swipe to cancel the slots from the chosen", Toast.LENGTH_LONG).show();
         firebaseStorage = FirebaseStorage.getInstance();
 

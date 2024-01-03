@@ -56,8 +56,8 @@ public class DoctorsShowPreviousPrescription extends AppCompatActivity {
         //send_pres=(Button) findViewById(R.id.send_prescription);
         gender_view = findViewById(R.id.genderTextView_pres);
 
-        DoctorsSessionManagement doctors_session_mangement = new DoctorsSessionManagement(this);
-        email = doctors_session_mangement.getDoctorSession()[0].replace(".",",");
+        DoctorsSessionManagement doctors_session_management = new DoctorsSessionManagement(this);
+        email = doctors_session_management.getDoctorSession()[0].replace(".",",");
 
 
         doctor = FirebaseDatabase.getInstance("https://mi-proyecto-8c7aa-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users");

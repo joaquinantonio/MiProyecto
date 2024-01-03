@@ -44,8 +44,8 @@ public class DoctorsSidePatientDetails extends AppCompatActivity {
         btn = findViewById(R.id.show_feedback);
         btn.setVisibility(View.INVISIBLE);
 
-        DoctorsSessionManagement doctors_session_mangement = new DoctorsSessionManagement(this);
-        email = doctors_session_mangement.getDoctorSession()[0].replace(".",",");
+        DoctorsSessionManagement doctors_session_management = new DoctorsSessionManagement(this);
+        email = doctors_session_management.getDoctorSession()[0].replace(".",",");
 
         if (!Questions.equals("")) {
             Quest.setText(Questions);

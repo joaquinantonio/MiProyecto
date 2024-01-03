@@ -98,8 +98,8 @@ public class DoctorMessageActivity extends AppCompatActivity {
         linearLayoutManager.setStackFromEnd(true);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        DoctorsSessionManagement doctors_session_mangement = new DoctorsSessionManagement(this);
-        userid = doctors_session_mangement.getDoctorSession()[0].replace(".",",");
+        DoctorsSessionManagement doctors_session_management = new DoctorsSessionManagement(this);
+        userid = doctors_session_management.getDoctorSession()[0].replace(".",",");
         firebaseStorage = FirebaseStorage.getInstance();
         databaseReference = firebaseStorage.getReference().child(userid);
         phone = getIntent().getSerializableExtra("phone").toString();

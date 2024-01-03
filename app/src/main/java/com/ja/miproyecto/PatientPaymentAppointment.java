@@ -52,7 +52,7 @@ public class PatientPaymentAppointment extends AppCompatActivity {
         fees_show = (TextView) findViewById(R.id.fees);
         pay_app = (Button)findViewById(R.id.book_button);
         paymentLink = (TextView) findViewById(R.id.linkPayment);
-        fees_show.setText("Please Pay Rs. "+ fees_val);
+        fees_show.setText("Please Pay RM "+ fees_val);
 
         pay_app.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +60,7 @@ public class PatientPaymentAppointment extends AppCompatActivity {
 
                 String transactionid = tid.getText().toString().trim();
                 if(transactionid.isEmpty()){
-                    tid.setError("Transaction ID is a required field");
+                    tid.setError("Reference ID is a required field");
                     tid.requestFocus();
                     return;
                 }
@@ -85,7 +85,7 @@ public class PatientPaymentAppointment extends AppCompatActivity {
                                         String dname = snapshot.getValue(String.class);
                                         AdminPaymentClass payment = new AdminPaymentClass(transactionid, dname, email, phone, pname, 0, date_val, chosen_time, 0);
                                         reference_payment.child("Payment0").child(phone).child(date_val).child(chosen_time).setValue(payment);
-                                        Toast.makeText(PatientPaymentAppointment.this, "Payment Complete. Please Wait for Confirmation.", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(PatientPaymentAppointment.this, "Payment Complete. Please Wait for Confirmation by Admin.", Toast.LENGTH_LONG).show();
                                         startActivity(new Intent(PatientPaymentAppointment.this, Patient.class));
                                     }
                                 }
@@ -97,7 +97,7 @@ public class PatientPaymentAppointment extends AppCompatActivity {
 
                         }
                         else{
-                            Toast.makeText(PatientPaymentAppointment.this, "The Doctor is not available! Select other slot with the same transaction ID!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(PatientPaymentAppointment.this, "The Doctor is not available. Select other slot.", Toast.LENGTH_LONG).show(); // Select other slot with the same Email ID
                             Intent intent = new Intent(PatientPaymentAppointment.this, PatientBookingAppointments.class);
                             intent.putExtra("Email ID", email);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);

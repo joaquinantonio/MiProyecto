@@ -41,8 +41,8 @@ public class DoctorChatDisplay extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setHasFixedSize(true);
 
-        DoctorsSessionManagement doctors_session_mangement = new DoctorsSessionManagement(this);
-        email = doctors_session_mangement.getDoctorSession()[0].replace(".", ",");
+        DoctorsSessionManagement doctors_session_management = new DoctorsSessionManagement(this);
+        email = doctors_session_management.getDoctorSession()[0].replace(".", ",");
         usersList = new ArrayList<>();
         reference = FirebaseDatabase.getInstance("https://mi-proyecto-8c7aa-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Chats");
         reference.addValueEventListener(new ValueEventListener() {

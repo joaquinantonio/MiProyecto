@@ -59,8 +59,8 @@ public class PrescriptionActivity extends AppCompatActivity {
         gender_view.setThreshold(1);
         prescription_doctor = FirebaseDatabase.getInstance("https://mi-proyecto-8c7aa-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Prescription_By_Doctor");
 
-        DoctorsSessionManagement doctors_session_mangement = new DoctorsSessionManagement(this);
-        email = doctors_session_mangement.getDoctorSession()[0].replace(".",",");
+        DoctorsSessionManagement doctors_session_management = new DoctorsSessionManagement(this);
+        email = doctors_session_management.getDoctorSession()[0].replace(".",",");
 
         FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
 

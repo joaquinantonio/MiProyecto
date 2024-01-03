@@ -81,8 +81,8 @@ public class PreviousFragment extends Fragment {
         DatabaseReference reference = FirebaseDatabase.getInstance("https://mi-proyecto-8c7aa-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Doctors_Appointments");
 //        user = FirebaseAuth.getInstance().getCurrentUser();
 //        email = user.getEmail().replace(".", ",");
-        DoctorsSessionManagement doctors_session_mangement = new DoctorsSessionManagement(getActivity());
-        String email = doctors_session_mangement.getDoctorSession()[0].replace(".", ",");
+        DoctorsSessionManagement doctors_session_management = new DoctorsSessionManagement(getActivity());
+        String email = doctors_session_management.getDoctorSession()[0].replace(".", ",");
 
         String[] monthName = {"Jan", "Feb",
                 "Mar", "Apr", "May", "Jun", "Jul",

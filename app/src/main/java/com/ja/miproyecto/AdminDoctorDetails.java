@@ -89,7 +89,7 @@ public class AdminDoctorDetails extends AppCompatActivity {
                     }
                     doctor_slots.setText(time);
                 } else {
-                    doctor_slots.setText("Doctor is not available today!");
+                    doctor_slots.setText("Doctor is not available today");
                 }
             }
 

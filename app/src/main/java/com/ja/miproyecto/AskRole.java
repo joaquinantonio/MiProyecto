@@ -65,8 +65,8 @@ public class AskRole extends AppCompatActivity {
 
     void checkDoctorSession() {
 
-        DoctorsSessionManagement doctors_session_mangement = new DoctorsSessionManagement(AskRole.this);
-        String isDoctorLoggedin[] =doctors_session_mangement.getDoctorSession();
+        DoctorsSessionManagement doctors_session_management = new DoctorsSessionManagement(AskRole.this);
+        String isDoctorLoggedin[] = doctors_session_management.getDoctorSession();
         if(!isDoctorLoggedin[0].equals("-1")){
             moveToDoctorActivity();
         }
@@ -76,19 +76,19 @@ public class AskRole extends AppCompatActivity {
     }
 
     void moveToDoctorActivity() {
-        DoctorsSessionManagement doctors_session_mangement = new DoctorsSessionManagement(AskRole.this);
-        String type[] = doctors_session_mangement.getDoctorSession();
+        DoctorsSessionManagement doctors_session_management = new DoctorsSessionManagement(AskRole.this);
+        String type[] = doctors_session_management.getDoctorSession();
 
-        if(type[1].equals("doctor")){
-            Intent intent = new Intent(AskRole.this, Doctors.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
+        Intent intent;
+        if(type[1].equals("Admin")){
+            intent = new Intent(AskRole.this, AdminActivity.class);
         }
-        else if (type[1].equals("Admin")){
-            Intent intent = new Intent(AskRole.this, AdminActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
+        //else if (type[1].equals("Admin")){
+        else {
+            intent = new Intent(AskRole.this, Doctors.class);
         }
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     void moveToPatientActivity() {

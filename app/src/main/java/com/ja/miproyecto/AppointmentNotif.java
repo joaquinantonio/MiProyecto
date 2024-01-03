@@ -13,24 +13,12 @@ public class AppointmentNotif {
         this.pname = pname;
     }
 
-
-
-    public AppointmentNotif() {
-    }
-
     public String getAppointment_text() {
         return appointment_text;
     }
 
-    public void setAppointment_text(String appointment_text) {
-        this.appointment_text = appointment_text;
-    }
     public String getPname() {
         return pname;
-    }
-
-    public void setPname(String pname) {
-        this.pname = pname;
     }
 
     public String getDate() {

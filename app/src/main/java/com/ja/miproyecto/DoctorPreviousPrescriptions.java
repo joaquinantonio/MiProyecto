@@ -39,8 +39,8 @@ public class DoctorPreviousPrescriptions extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
         presc = new ArrayList<>();
 
-        DoctorsSessionManagement doctors_session_mangement = new DoctorsSessionManagement(this);
-        email = doctors_session_mangement.getDoctorSession()[0].replace(".",",");
+        DoctorsSessionManagement doctors_session_management = new DoctorsSessionManagement(this);
+        email = doctors_session_management.getDoctorSession()[0].replace(".",",");
         name = getIntent().getStringExtra("pname");
         phone = getIntent().getStringExtra("phone");
 

@@ -33,8 +33,8 @@ public class DoctorsShowFeedback extends AppCompatActivity {
         name=(String) getIntent().getSerializableExtra("name");
         phone=(String) getIntent().getSerializableExtra("phone");
 
-        DoctorsSessionManagement doctors_session_mangement = new DoctorsSessionManagement(this);
-        email = doctors_session_mangement.getDoctorSession()[0].replace(".",",");
+        DoctorsSessionManagement doctors_session_management = new DoctorsSessionManagement(this);
+        email = doctors_session_management.getDoctorSession()[0].replace(".",",");
         feedback = FirebaseDatabase.getInstance("https://mi-proyecto-8c7aa-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Doctors_Feedback");
 
         feedback.child(email).child(phone).child(date).child(time).addValueEventListener(new ValueEventListener() {
