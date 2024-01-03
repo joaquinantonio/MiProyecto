@@ -36,7 +36,6 @@ public class PatientChatDisplay extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         PatientSessionManagement session = new PatientSessionManagement(PatientChatDisplay.this);
         phone = session.getSession();
-
     }
 
     private void readChats() {
@@ -57,7 +56,7 @@ public class PatientChatDisplay extends AppCompatActivity {
                         if(val.equals(id)){
                             if(mUsers.size()!=0){
                                 int flag = 0;
-                                for (int i=0; i<mUsers.size(); i++){
+                                for (int i = 0; i<mUsers.size(); i++){
                                     if(details.getEmail().equals(mUsers.get(i).getEmail())){
                                         flag = 1;
                                         break;

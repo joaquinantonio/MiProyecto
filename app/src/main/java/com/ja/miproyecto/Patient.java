@@ -157,7 +157,6 @@ public class Patient extends AppCompatActivity implements NavigationView.OnNavig
         } else if (itemId == R.id.settingsApp) {
             Intent intent1 = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
             intent1.setData(Uri.parse("package:" + getApplicationContext().getPackageName()));
-
             // Check if there is an activity that can handle the intent
             if (intent1.resolveActivity(getPackageManager()) != null) {
                 startActivity(intent1);

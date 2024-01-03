@@ -18,7 +18,6 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import java.util.concurrent.TimeUnit;
 
 public class PatientLogin extends AppCompatActivity {
-
     private EditText enterPhone;
     private Button getOtpButton;
 

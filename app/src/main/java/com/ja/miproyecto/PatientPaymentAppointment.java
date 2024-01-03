@@ -94,7 +94,6 @@ public class PatientPaymentAppointment extends AppCompatActivity {
 
                                 }
                             });
-
                         }
                         else{
                             Toast.makeText(PatientPaymentAppointment.this, "The Doctor is not available. Select other slot.", Toast.LENGTH_LONG).show(); // Select other slot with the same Email ID
@@ -102,47 +101,14 @@ public class PatientPaymentAppointment extends AppCompatActivity {
                             intent.putExtra("Email ID", email);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
-                            return;
                         }
                     }
-
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
 
                     }
                 });
-
-//                reference_doctor.child(email).child("name").addListenerForSingleValueEvent(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                        if(snapshot.exists()){
-//                            String dname = snapshot.getValue(String.class);
-//                            AdminPaymentClass payment = new AdminPaymentClass(transactionid, dname, email, phone, pname, 0, date_val, chosen_time, 0);
-//                            reference_payment.child("Payment0").child(phone).child(date_val).child(chosen_time).setValue(payment);
-//                            reference_booking.child(email).child(date_val).child(finalSlot_val).child("Count").addListenerForSingleValueEvent(new ValueEventListener() {
-//                                @Override
-//                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                                    int count = snapshot.getValue(Integer.class);
-//                                    count = count+1;
-//                                    reference_booking.child(email).child(date_val).child(finalSlot_val).child("Count").setValue(count);
-//                                }
-//
-//                                @Override
-//                                public void onCancelled(@NonNull DatabaseError error) {
-//
-//                                }
-//                            });
-//                            Toast.makeText(PatientPaymentAppointment.this, "Payment Done! Please Wait for Confirmation!", Toast.LENGTH_LONG).show();
-//                            startActivity(new Intent(PatientPaymentAppointment.this, Patient.class));
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError error) {
-//
-//                    }
-//                });
             }
         });
     }

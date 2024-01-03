@@ -244,12 +244,7 @@ public class PatientBookingAppointments extends AppCompatActivity {
                         time_adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.dropdown_gender, dates );
                         time_view.setAdapter(time_adapter);
                         time_view.setThreshold(1);
-                        time_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                chosen_time = time_adapter.getItem(position);
-                            }
-                        });
+                        time_view.setOnItemClickListener((parent, view, position1, id) -> chosen_time = time_adapter.getItem(position1));
                     }
 
                     @Override
@@ -330,13 +325,6 @@ public class PatientBookingAppointments extends AppCompatActivity {
 
                     }
                 });
-
-
-
-//                AppointmentNotif appointment_notif = new AppointmentNotif("", date_val, chosen_time, question_data, phone, pname);
-//                reference_doctor_appt.child(email).child(date_val).child(chosen_time).setValue(appointment_notif);
-
-
             }
         });
     }

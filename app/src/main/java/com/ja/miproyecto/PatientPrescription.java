@@ -122,8 +122,6 @@ public class PatientPrescription extends AppCompatActivity {
                     Rx_data=prescriptionDetails.getRx();
                     gender_data=prescriptionDetails.getPatientGender();
 
-
-
                 }
 
             }

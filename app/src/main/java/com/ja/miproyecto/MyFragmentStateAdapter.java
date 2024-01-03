@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 // FragmentStateAdapter itself does not have a method named addFragment. To achieve the desired functionality, you should create a custom adapter that extends FragmentStateAdapter and implement the necessary methods.
 public class MyFragmentStateAdapter extends FragmentStateAdapter {
-
     private List<Fragment> fragments = new ArrayList<>();
     private List<String> fragmentTitles = new ArrayList<>();
 
